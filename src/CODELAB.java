@@ -11,71 +11,20 @@ public class CODELAB {
         String name = scan.nextLine();
 
         //DECLARO CONSTANTES PARA LOS NIVELES
-        int hp = 0;
-        int potion = 0;
+        int hp = 100;
+        int potion = 2;
+        final int DAÑO_ESPADA = 25;
 
-        //DIFICIL
-        final int VIDA_DIFICIL = 50;
-        final int POCIONES_DIFICIL = 1;
-        //NORMAL
-        final int VIDA_NORMAL = 100;
-        final int POCIONES_NORMAL = 2;
-        //FACIL
-        final int VIDA_FACIL = 150;
-        final int POCIONES_FACIL = 3;
-
-        //DAÑO DE LOS ENEMIGOS
+        //VALORES DE LOS ENEMIGOS
         //====TRASGO====
-        final int DANIO_MIN_TRASGO = 20;
-        final int DANIO_MAX_TRASGO = 35;
+        final int VIDA_TRASGO = 50;
+        final int DANIO_MAX_TRASGO = 20;
         //====TROLL====
-        final int DANIO_MIN_TROLL = 40;
-        final int DANIO_MAX_TROLL = 60;
+        final int DANIO_MIN_TROLL = 80;
+        final int DANIO_MAX_TROLL = 30;
 
-        //INICIALIZAR LAS VARIABLES PARA PEDIR LOS DATOS POR TECLADO
-        System.out.println("Escoge un nivel de dificultad:");
-        System.out.println("1 = Fácil | 2 = Normal | 3 = Difícil");
-        int dificultad = 0;
-        boolean dificultadValida = false;
 
-        //VALIDACION DEL VALOR INTRODUCIDO
-            while(!dificultadValida) {
-                try {
-                    dificultad = scan.nextInt();
-                    if(dificultad < 1 || dificultad > 3) {
-                        System.out.println("Valor introducido es invalido.");
-                        System.out.println("Escoge un nivel de dificultad:");
-                        System.out.println("1 = Fácil | 2 = Normal | 3 = Difícil");
-                    } else {
-                        dificultadValida = true;
-                    }
-                    } catch(InputMismatchException error) {
-                    System.out.println("Debes introducir un numero entero.");
-                    System.out.println("1 = Fácil | 2 = Normal | 3 = Difícil");
-                    scan.nextLine();
-                }
-            }
-        //SELECTOR DE DIFICULTAD
-        switch(dificultad) {
-            case 1:
-                hp = VIDA_FACIL;
-                potion = POCIONES_FACIL;
-                System.out.println("Dificultad: Fácil");
-                break;
-            case 2:
-                hp = VIDA_NORMAL;
-                potion = POCIONES_NORMAL;
-                System.out.println("Dificultad: Normal");
-                break;
-            case 3:
-                hp = VIDA_DIFICIL;
-                potion = POCIONES_DIFICIL;
-                System.out.println("Dificultad: Díficil");
-                break;
-            default:
-                System.out.println("Valor no valido");
-                break;
-        }
+
         //IMPRIMO DATOS PJ
         System.out.println("¡Bienvenido, " + name + "!");
         System.out.println("Vida: " + hp);
